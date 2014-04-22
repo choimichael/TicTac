@@ -1,0 +1,12 @@
+.cell {
+	float:left; 
+	border:1px solid white; 
+	width:100px; height:100px;
+	background-color:#e6e6e6; 
+	color:white; 
+	font-size:15pt;
+}
+
+.clear {
+		clear:both;
+	}
