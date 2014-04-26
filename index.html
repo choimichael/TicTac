@@ -6,28 +6,32 @@
 	<link rel="stylesheet" type="text/css" href="normalize.css">
 	<link rel="stylesheet" media="all" href="hover.css" >
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+	<script src="https://cdn.firebase.com/v0/firebase.js"></script>
+	<script src="https://cdn.firebase.com/libs/angularfire/0.6.0/angularfire.min.js"></script>
 	<script src="script.js"></script>
 </head>
 <body x-ng-app="gameApp" x-ng-controller="TicTacController">
 
 <div class="container">
-	
+
 	<h1>틱 택 토</h1>
-	
-	<div id="circleP1" x-ng-bind="countX"></div>
-	<div id="circleP2" x-ng-bind="countO"></div>
-	
-	<div x-ng-init="rows = [ [0,0,0],[0,0,0],[0,0,0] ];">
-		
-		<div class="clear row{{$index}}" x-ng-repeat="X in rows track by $index">
-			
+
+	<div id="circleP1" x-ng-bind="game.countX"></div>
+	<div id="circleP2" x-ng-bind="game.countO"></div>
+
+	<div>
+
+		<div class="clear row{{$index}}" x-ng-repeat="X in game.rows track by $index">
+
 			<div class= "cell wobble-skew col{{$index}}" x-ng-repeat="col in X track by $index" x-ng-click="playerTurn($parent.$index, $index);">
 				 {{ ((col == 1)? "X" : ( col == -1 ? "O" : "")) }}
 		 	</div>
-	 	
+
 	 	</div>
+
  		<button class="button" x-ng-click="playAg();">Play Again</button>
  		<button class="button" x-ng-click="reset();">Game Over</button>
+
  	</div>
  </div>
 
