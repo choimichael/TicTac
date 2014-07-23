@@ -1,8 +1,6 @@
 TicTac
 ======
-
-Project 1 WDI
-
+# Project 1 WDI
 Features
--Angular.js
--Firebase
+- Angular.js
+- Firebase
